@@ -1,0 +1,23 @@
+@import "variables";
+@import "common_elements";
+@import "account-form";
+@import "strength-bar";
+@import "spinner";
+
+iframe[seamless] {
+    border: none!important;
+}
+
+body {
+    margin: 0px;
+    font-family: Helvetica, 'Roboto', sans-serif;
+    background: black;
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 1420px;
+    height: 100%;
+    padding-top: 80px;
+    background-color: $main-bg-color;
+}

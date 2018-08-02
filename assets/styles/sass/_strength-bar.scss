@@ -1,0 +1,39 @@
+@import "variables";
+
+.strength-wrapper {
+    margin-top: -15px;
+    div {
+        float: left;
+        width: 33.333333%;
+        display: flex;
+
+        div {
+            width: 100%;
+            margin-left: 4px;
+            margin-right: 4px;
+            height: 8px;
+            background-color: $strength-bg-color;
+            border-radius: 10px;
+
+            &.weak {
+                background-color: $strength-wk;
+            }
+            &.medium {
+                background-color: $strength-md;
+            }
+            &.strong {
+                background-color: $strength-st;
+            }
+        }
+        &:first-child {
+            .fill-color {
+                margin-left: 0px;
+            }
+        }
+        &:last-child {
+            .fill-color {
+                margin-right: 0px;
+            }
+        }
+    }
+}

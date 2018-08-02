@@ -1,0 +1,25 @@
+/* FORM */
+$main-bg-color: #f5f6fb;
+
+/* COMMON COLORS */
+$invalid-color: #f79682;
+$warning-color: #f7bc1c;
+$valid-color: #1fe6a8;
+$valid-color-darker: #1baa7d;
+
+/* INPUTS */
+$input-font-color: #737693;
+$input-border-color: #b6b9d0;
+
+/* BUTTONS */
+$btn-success-bg-color: #17d499;
+$btn-success-font-color: white;
+
+/* TEXT */
+$h4-color: #312f4f;
+
+/* PASSWORD VALIDATIONS */
+$strength-bg-color: #eaeaf4;
+$strength-wk: $invalid-color;
+$strength-md: $warning-color;
+$strength-st: $valid-color;

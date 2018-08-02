@@ -1,0 +1,73 @@
+<div id="account-section">
+            
+        <img src="./assets/images/main-logo.png" class="main-logo" />
+    
+        <div id="account-form-wrapper">
+    
+            <h4>Crie sua conta</h4>
+    
+            <form name="account-form" id="account-form" class="account-form">
+        
+                <div class="form-group">
+                    <label for="name">Nome completo</label>
+                    <input type="text" id="name" onkeyup="onChangeName(this)">
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" onkeyup="onChangeEmail(this)">
+                </div>
+        
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" onkeyup="onChangePassword(this)">
+                </div>
+        
+                <div class="strength-wrapper">
+                    <div><div id="fill-color-one"></div></div>
+                    <div><div id="fill-color-two"></div></div>
+                    <div><div id="fill-color-three"></div></div>
+                </div>
+        
+                <div class="password-requirements">
+                    <ul>
+                        <li id="password-validation-one"><span>Pelo menos 6 caracteres</span></li>
+                        <li id="password-validation-two"><span>Pelo menos 1 letra maiúscula</span></li>
+                        <li id="password-validation-three"><span>Pelo menos 1 número</span></li>
+                    </ul>
+                </div>
+        
+                <div class="form-group">
+                    <label for="confirm-password">Confirme sua senha</label>
+                    <input type="password" id="confirm-password" name="confirm-password" onkeyup="onChangePasswordConfirmation(this)">
+                </div>
+        
+                <button type="button" class="btn-confirm" id="confirm-button" disabled="disabled" name="confirm-button" onclick="submitForm(this)">
+                    <span id="btn-confirmation-lbl">Criar conta</span>
+                    <span id="loading-button">
+                        <div class="spinner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </span>
+                </button>
+        
+            </form>
+        </div>
+    
+        <div id="success-form-wrapper">
+    
+                <img src="./assets/images/form-success.png" class="form-success-img" />
+    
+            <h4>Tudo certo</h4>
+    
+            <div class="success-txt-wrapper">
+                <span>
+                    Verifique sua caixa de entrada para confirmar seu e-mail.
+                </span>
+            </div>
+    
+        </div>
+    
+    </div><!-- account-form -->

@@ -1,0 +1,297 @@
+/* FORM */
+/* COMMON COLORS */
+/* INPUTS */
+/* BUTTONS */
+/* TEXT */
+/* PASSWORD VALIDATIONS */
+/* FORM */
+/* COMMON COLORS */
+/* INPUTS */
+/* BUTTONS */
+/* TEXT */
+/* PASSWORD VALIDATIONS */
+h4 {
+  font-size: 1.4em;
+  margin-top: 0px;
+  color: #312f4f;
+}
+
+input {
+  outline: none !important;
+}
+input:focus, input:active {
+  outline: none !important;
+  -webkit-box-shadow: 0px 0px 5px 0px #a8a8a8 !important;
+  -moz-box-shadow: 0px 0px 5px 0px #a8a8a8 !important;
+  box-shadow: 0px 0px 5px 0px #a8a8a8 !important;
+}
+
+button {
+  outline: none !important;
+}
+button:focus, button:active {
+  outline: none !important;
+  -webkit-box-shadow: 0px 0px 5px 0px #a8a8a8;
+  -moz-box-shadow: 0px 0px 5px 0px #a8a8a8;
+  box-shadow: 0px 0px 5px 0px #a8a8a8;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #1baa7d;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+.form-group label {
+  width: 100%;
+  text-align: left !important;
+  float: right;
+  color: #737693;
+  margin-bottom: 3px;
+}
+.form-group input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #b6b9d0;
+  padding: 15px;
+  color: #737693;
+  -webkit-box-shadow: inset 0px 1px 5px 0px #ebebeb;
+  -moz-box-shadow: inset 0px 1px 5px 0px #ebebeb;
+  box-shadow: inset 0px 1px 5px 0px #ebebeb;
+}
+.form-group input.invalid-field {
+  border-color: #f79682;
+}
+.form-group input.valid-field {
+  border-color: #1fe6a8;
+}
+.form-group ::placeholder {
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+.form-group :-ms-input-placeholder {
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+.form-group ::-ms-input-placeholder {
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+.form-group::after, .form-group::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn-confirm {
+  background-color: #17d499;
+  color: white;
+  height: 50px;
+  width: 100%;
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+}
+.btn-confirm:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+/* FORM */
+/* COMMON COLORS */
+/* INPUTS */
+/* BUTTONS */
+/* TEXT */
+/* PASSWORD VALIDATIONS */
+#account-section {
+  width: 390px;
+  min-height: 300px;
+  background-color: white;
+  margin: auto;
+  padding: 35px 60px;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 5px 0px #e6e6e6;
+  -moz-box-shadow: 0px 0px 5px 0px #e6e6e6;
+  box-shadow: 0px 0px 5px 0px #e6e6e6;
+}
+#account-section .main-logo {
+  width: 110px;
+}
+#account-section .account-form .password-requirements {
+  padding-top: 5px;
+}
+#account-section .account-form .password-requirements ul {
+  color: #eaeaf4;
+  text-align: left;
+  margin-left: -15px;
+}
+#account-section .account-form .password-requirements ul li {
+  font-size: 2em;
+  line-height: 20px;
+}
+#account-section .account-form .password-requirements ul li span {
+  margin-left: -8px;
+  font-size: 0.5em !important;
+  color: #737693;
+}
+#account-section .account-form .password-requirements ul li.weak {
+  color: #f79682;
+}
+#account-section .account-form .password-requirements ul li.medium {
+  color: #f7bc1c;
+}
+#account-section .account-form .password-requirements ul li.strong {
+  color: #1fe6a8;
+}
+#account-section .account-form #confirm-button #loading-button {
+  display: none;
+}
+#account-section #success-form-wrapper {
+  display: none;
+  margin-bottom: 100px;
+}
+#account-section #success-form-wrapper .form-success-img {
+  width: 100px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+#account-section #success-form-wrapper h4 {
+  margin-bottom: 10px;
+}
+#account-section #success-form-wrapper .success-txt-wrapper {
+  max-width: 250px;
+  margin: auto;
+}
+#account-section #success-form-wrapper .success-txt-wrapper span {
+  line-height: 25px;
+}
+
+@supports (-ms-ime-align: auto) {
+  /* EDGE specific styles go here */
+  .password-requirements ul {
+    margin-left: -21px !important;
+  }
+  .password-requirements ul li span {
+    margin-left: 0px !important;
+  }
+}
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  /* IE10+ specific styles go here */
+  .password-requirements ul {
+    margin-left: -21px !important;
+  }
+  .password-requirements ul li span {
+    margin-left: 0px !important;
+  }
+}
+/* FORM */
+/* COMMON COLORS */
+/* INPUTS */
+/* BUTTONS */
+/* TEXT */
+/* PASSWORD VALIDATIONS */
+.strength-wrapper {
+  margin-top: -15px;
+}
+.strength-wrapper div {
+  float: left;
+  width: 33.333333%;
+  display: flex;
+}
+.strength-wrapper div div {
+  width: 100%;
+  margin-left: 4px;
+  margin-right: 4px;
+  height: 8px;
+  background-color: #eaeaf4;
+  border-radius: 10px;
+}
+.strength-wrapper div div.weak {
+  background-color: #f79682;
+}
+.strength-wrapper div div.medium {
+  background-color: #f7bc1c;
+}
+.strength-wrapper div div.strong {
+  background-color: #1fe6a8;
+}
+.strength-wrapper div:first-child .fill-color {
+  margin-left: 0px;
+}
+.strength-wrapper div:last-child .fill-color {
+  margin-right: 0px;
+}
+
+.spinner {
+  margin: 0px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+iframe[seamless] {
+  border: none !important;
+}
+
+body {
+  margin: 0px;
+  font-family: Helvetica, "Roboto", sans-serif;
+  background: black;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1420px;
+  height: 100%;
+  padding-top: 80px;
+  background-color: #f5f6fb;
+}
+
+/*# sourceMappingURL=style.css.map */
