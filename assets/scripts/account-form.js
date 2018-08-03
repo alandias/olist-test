@@ -186,4 +186,4 @@ function submitForm(elem){
 
 setTimeout(function(){ 
     init();
-});
+}, 200);
