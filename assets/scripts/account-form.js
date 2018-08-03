@@ -1,3 +1,7 @@
+function init(){
+    document.getElementById("name").focus();
+}
+
 function onChangeName(elem){
 
     checkFormIsValid();
@@ -179,3 +183,7 @@ function submitForm(elem){
     }, 2000);
 
 }
+
+setTimeout(function(){ 
+    init();
+});
