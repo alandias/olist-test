@@ -163,6 +163,9 @@ function submitForm(elem){
         document.getElementById("account-form-wrapper").className = "hide";
         document.getElementById("success-form-wrapper").className = "show";
 
+        var logoElem = document.getElementById("main-logo");
+        logoElem.scrollIntoView();
+
     }, 2000);
 
 }
