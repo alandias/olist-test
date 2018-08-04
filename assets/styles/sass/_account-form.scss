@@ -101,3 +101,17 @@
         }
     }
  }
+
+ @media screen and (max-width: 542px){
+    #account-section {
+        position: relative;
+        width: 90%;
+        padding: 15px 0;
+        margin: 0 auto;
+        text-align: center;
+
+        .account-form {
+            padding: 15px;
+        }
+    }
+ }

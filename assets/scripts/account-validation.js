@@ -1,5 +1,5 @@
 function isEmptyField(value){
-    return value === undefined || value === null || value.length === 0;
+    return value === undefined || value === null || value.trim().length === 0;
 }
 
 function containsUpperLetter(value){
@@ -45,15 +45,28 @@ function isPasswordValid(value){
     return true;
 }
 
-function isPasswordConfirmationValid(value){
+function isPasswordConfirmationValid(value, passwordValue){
     if(isEmptyField(value)){
         return false;
     }
 
-    var passwordValue = document.getElementById("password").value;
     if(value !== passwordValue){
         return false;
     }
 
     return true;
+}
+
+function isFormValid(name, email, password, confirmPass){
+
+    var nameValid = isNameValid(name);
+    var emailValid = isEmailValid(email);
+    var passValid = isPasswordValid(password);
+    var confirmPassValid = isPasswordConfirmationValid(confirmPass, password);
+
+    if(!nameValid || !emailValid || !passValid || !confirmPassValid){
+        return false;
+    } else {
+        return true;
+    }
 }

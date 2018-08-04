@@ -28,25 +28,29 @@ function onChangePassword(elem){
 
     checkFormIsValid();
 
-    var elemConfirmPass = document.getElementById("confirm-password");
-    if(elemConfirmPass.className !== undefined && elemConfirmPass.className !== null && elemConfirmPass.className.length > 0){
-        onChangePasswordConfirmation(elemConfirmPass);
-    }
-
     var strengthOne = document.getElementById("fill-color-one");
     var strengthTwo = document.getElementById("fill-color-two");
     var strengthThree = document.getElementById("fill-color-three");
+
+    /* ELIMINATE CLASSES, REFRESHING VALIDATION COLORS */
+    strengthOne.className = "";
+    strengthTwo.className = "";
+    strengthThree.className = "";
 
     var passValidationOne = document.getElementById("password-validation-one");
     var passValidationTwo = document.getElementById("password-validation-two");
     var passValidationThree = document.getElementById("password-validation-three");
 
-    strengthOne.className = "";
-    strengthTwo.className = "";
-    strengthThree.className = "";
+    /* ELIMINATE CLASSES, REFRESHING VALIDATION COLORS */
     passValidationOne.className = "";
     passValidationTwo.className = "";
     passValidationThree.className = "";
+
+    var elemConfirmPass = document.getElementById("confirm-password");
+
+    if(!isEmptyField(elemConfirmPass.className)){
+        onChangePasswordConfirmation(elemConfirmPass);
+    }
 
     if(!isPasswordValid(elem.value)){
 
@@ -81,50 +85,29 @@ function onChangePassword(elem){
             passValidationThree.className = "strong";
         }
 
-        if(lengthOk && upperLetterOk && numberOk){
-            strengthOne.className = "strong";
-            strengthTwo.className = "strong";
-            strengthThree.className = "strong";
-        }
- 
-        else if(!lengthOk && upperLetterOk && numberOk){
+        //IF ONLY TWO REQUIREMENT WERE FILLED, SETS IT AS MEDIUM
+        if((!lengthOk && upperLetterOk && numberOk) || (lengthOk && !upperLetterOk && numberOk) || (lengthOk && upperLetterOk && !numberOk)){
             strengthOne.className = "medium";
             strengthTwo.className = "medium";
-            strengthThree.className = "";
-        } else if(lengthOk && !upperLetterOk && numberOk){
-            strengthOne.className = "medium";
-            strengthTwo.className = "medium";
-            strengthThree.className = "";
-        } else if(lengthOk && upperLetterOk && !numberOk){
-            strengthOne.className = "medium";
-            strengthTwo.className = "medium";
-            strengthThree.className = "";
+            return;
         }
 
-        else if(!lengthOk && !upperLetterOk && numberOk){
+        //IF ONLY ONE REQUIREMENT WAS FILLED, SETS IT AS WEAK
+        if((!lengthOk && !upperLetterOk && numberOk) || (lengthOk && !upperLetterOk && !numberOk) || (!lengthOk && upperLetterOk && !numberOk)){
             strengthOne.className = "weak";
-            strengthTwo.className = "";
-            strengthThree.className = "";
-        } else if(lengthOk && !upperLetterOk && !numberOk){
-            strengthOne.className = "weak";
-            strengthTwo.className = "";
-            strengthThree.className = "";
-        } else if(!lengthOk && upperLetterOk && !numberOk){
-            strengthOne.className = "weak";
-            strengthTwo.className = "";
-            strengthThree.className = "";
+            return;
         }
 
     } else {
-
-        /* ELIMINATE CLASSES, REFRESHING VALIDATION COLORS */
+        //WITH ALL REQUIREMENTS FILLED, SETS IT AS STRONG
         elem.className = 'valid-field';
-        strengthOne.className = "strong";
-        strengthTwo.className = "strong";
-        strengthThree.className = "strong";
-        passValidationOne.className = "strong";
-        passValidationTwo.className = "strong";
+        strengthOne.className = "strong"; 
+        strengthTwo.className = "strong"; 
+        strengthThree.className = "strong"; 
+        passValidationOne.className = "strong"; 
+        passValidationTwo.className = "strong"; 
         passValidationThree.className = "strong";
+        return;
     }
 }
 
@@ -132,7 +115,7 @@ function onChangePasswordConfirmation(elem){
 
     checkFormIsValid();
 
-    if(!isPasswordConfirmationValid(elem.value)){
+    if(!isPasswordConfirmationValid(elem.value, document.getElementById("password").value)){
         elem.className = 'invalid-field';
     } else {
         elem.className = 'valid-field';
@@ -141,20 +124,20 @@ function onChangePasswordConfirmation(elem){
 
 function checkFormIsValid(){
 
-    var nameValid = isNameValid(document.getElementById("name").value);
-    var emailValid = isEmailValid(document.getElementById("email").value);
-    var passValid = isPasswordValid(document.getElementById("password").value);
-    var confirmPassValid = isPasswordConfirmationValid(document.getElementById("confirm-password").value);
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var pass = document.getElementById("password").value;
+    var confirmPass = document.getElementById("confirm-password").value;
+
     var btnElem = document.getElementById("confirm-button");
 
-    if(!nameValid || !emailValid || !passValid || !confirmPassValid){
+    if(!isFormValid(name, email, pass, confirmPass)){
         btnElem.setAttribute("disabled", "disabled");
         return false;
     } else {
         btnElem.removeAttribute("disabled");
         return true;
     }
-
 }
 
 function submitForm(elem){
